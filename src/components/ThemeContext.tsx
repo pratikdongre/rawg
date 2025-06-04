@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  Children,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 interface ThemeContextType {
   isDark: boolean;
@@ -31,38 +37,3 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     </ThemeContext.Provider>
   );
 };
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (!context) throw new Error("useTheme must be used within ThemeProvider");
-  return context;
-};
-
-// import { ThemeProvider } from "./context/ThemeContext";
-
-// const App = () => (
-//     <ThemeProvider>
-//       <YourApp />
-//     </ThemeProvider>
-//   );
-
-/*
-import { useTheme } from "../context/ThemeContext";
-import { IoMdSunny } from "react-icons/io";
-import { FaMoon } from "react-icons/fa";
-
-const ThemeToggle = () => {
-  const { isDark, toggleTheme } = useTheme();
-
-  return (
-    <div onClick={toggleTheme} className="cursor-pointer flex items-center gap-2">
-      {isDark ? <FaMoon /> : <IoMdSunny />}
-      <p>{isDark ? "Dark Mode" : "Light Mode"}</p>
-    </div>
-  );
-};
-<div className="bg-white text-black dark:bg-gray-900 dark:text-white">
-  ...
-</div>
-
-*/
