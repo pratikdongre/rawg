@@ -8,7 +8,7 @@ const SearchInput = () => {
 
       <input
         type="search"
-        className="w-full bg-black text-white outline-0 rounded-2xl p-1"
+        className="w-full  text-white outline-0 rounded-2xl p-1 "
         placeholder="Search Games..."
       ></input>
     </>
