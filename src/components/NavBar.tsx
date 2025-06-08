@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import logo from "../assets/logo.webp";
 import { IoMdSunny } from "react-icons/io";
 import SearchInput from "./SearchInput";
