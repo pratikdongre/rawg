@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import { ThemeContext } from "./components/ThemeProvider";
 import GameGrid from "./components/GameGrid";
 
+import Sidebar from "./components/Sidebar";
 const App = () => {
   const { theme } = useContext(ThemeContext);
 
@@ -16,7 +17,9 @@ const App = () => {
         <NavBar></NavBar>
       </div>
       <div className="flex flex-1 ">
-        <div className="  lg:w-40  hidden lg:block">side</div>
+        <div className="  lg:w-40  hidden lg:block">
+          <Sidebar></Sidebar>
+        </div>
         <div className=" flex-1">
           <GameGrid></GameGrid>
         </div>
