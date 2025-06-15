@@ -1,8 +1,14 @@
 import useGames from "./hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
-const GameGrid = () => {
-  const { games, error, isLoading } = useGames();
+import type { GameQuery } from "../App";
+
+interface Props {
+  GameQuery: GameQuery;
+}
+
+const GameGrid = ({ GameQuery }: Props) => {
+  const { games, error, isLoading } = useGames(GameQuery);
   const skeletons = Array(9).fill(0);
   return (
     <div className="grid lg:grid-cols-3 gap-3 me-4 md:grid-cols-2 sm:grid-cols-1">
