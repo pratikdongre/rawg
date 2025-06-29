@@ -3,6 +3,8 @@ import NavBar from "./components/NavBar";
 import { ThemeContext } from "./components/ThemeProvider";
 import GameGrid from "./components/GameGrid";
 
+import PlatformList from "./components/Platform";
+
 export interface GameQuery {
   genre: genres | null;
 }
@@ -33,8 +35,14 @@ const App = () => {
             onSelectedGenre={(genre) => SetGameQuery({ ...GameQuery, genre })}
           ></Sidebar>
         </div>
-        <div className=" flex-1">
-          <GameGrid GameQuery={GameQuery}></GameGrid>
+        <div className="  flex-1">
+          <div className="ms-2 text-2xl font-medium">
+            {GameQuery.genre?.name}
+            <PlatformList></PlatformList>
+          </div>
+          <div>
+            <GameGrid GameQuery={GameQuery}></GameGrid>
+          </div>
         </div>
       </div>
     </div>
