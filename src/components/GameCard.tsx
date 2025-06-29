@@ -8,7 +8,8 @@ interface Props {
 }
 const GameCard = ({ game }: Props) => {
   return (
-    <div className=" m-2 rounded-2xl w-full h-full  border-2">
+    // <div className=" m-2 rounded-2xl w-full h-full  border-2">
+    <>
       <img
         src={CropImage(game.background_image)}
         alt=""
@@ -23,7 +24,7 @@ const GameCard = ({ game }: Props) => {
           <GameCriticScore metacritic={game.metacritic}></GameCriticScore>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
